@@ -57,7 +57,7 @@ async function createWindow() {
   });
 
   // Maximize the window on startup
-  // mainWindow.maximize();
+  mainWindow.maximize();
 
   console.log("isDev", isDev);
 
@@ -72,7 +72,7 @@ async function createWindow() {
   });
 
   if (isDev) {
-    mainWindow.webContents.openDevTools();
+    // mainWindow.webContents.openDevTools();
   }
 
   mainWindow.on("closed", () => {
@@ -259,4 +259,24 @@ ipcMain.handle("reset-password", async (event, authData) => {
 ipcMain.handle("get-device-details", async (event, deviceData) => {
   console.log("Get device details request:", deviceData);
   return { data: deviceData };
+});
+
+ipcMain.handle("create-short-url", async (event, shortURLData) => {
+  console.log("Create short URL request:", shortURLData);
+  return { data: shortURLData };
+});
+
+ipcMain.handle("get-short-url", async (event, shortURLData) => {
+  console.log("Get short URL request:", shortURLData);
+  return { data: shortURLData };
+});
+
+ipcMain.handle("get-full-url", async (event, fullURLData) => {
+  console.log("Get full URL request:", fullURLData);
+  return { data: fullURLData };
+});
+
+ipcMain.handle("delete-short-url", async (event, deleteURLData) => {
+  console.log("Delete short URL request:", deleteURLData);
+  return { data: deleteURLData };
 });

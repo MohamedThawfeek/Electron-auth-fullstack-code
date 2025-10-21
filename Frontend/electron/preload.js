@@ -25,4 +25,10 @@ contextBridge.exposeInMainWorld('electronAPI', {
   // Device
   getDeviceDetails: (deviceData) => ipcRenderer.invoke('get-device-details', deviceData),
 
+  // Short URL
+  createShortURL: (shortURLData) => ipcRenderer.invoke('create-short-url', shortURLData),
+  getShortURL: (shortURLData) => ipcRenderer.invoke('get-short-url', shortURLData),
+  getFullURL: (fullURLData) => ipcRenderer.invoke('get-full-url', fullURLData),
+  deleteShortURL: (deleteURLData) => ipcRenderer.invoke('delete-short-url', deleteURLData),
+
 });
