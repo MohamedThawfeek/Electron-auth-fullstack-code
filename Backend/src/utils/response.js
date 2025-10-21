@@ -99,4 +99,73 @@ exports.Json = {
       },
     },
   },
+  create_short_url: {
+    success: {
+      resultCode: 1416,
+      message: "Short URL created successfully",
+    },
+    error: {
+      resultCode: 1416,
+      message: "Unable to create short URL",
+      message2: "User not found",
+    },
+    request_body: {
+      resultCode: -1416,
+      errors: {
+        fullUrl: "Full URL is required",
+        user_id: "User ID is required",
+      },
+    },
+  },
+  get_short_urls: {
+    success: {
+      resultCode: 1417,
+      message: "Short URLs retrieved successfully",
+    },
+    error: {
+      resultCode: 1417,
+      message: "Unable to retrieve short URLs",
+    },
+    request_body: {
+      resultCode: -1417,
+      errors: {
+        user_id: "User ID is required",
+        page: "Page must be a positive integer",
+        limit: "Limit must be between 1 and 100",
+      },
+    },
+  },
+  get_full_url: {
+    success: {
+      resultCode: 1418,
+      message: "Full URL retrieved successfully",
+    },
+    error: {
+      resultCode: 1418,
+      message: "Unable to retrieve full URL",
+      message2: "Short URL not found",
+    },
+    request_body: {
+      resultCode: -1418,
+      errors: {
+        shortUrl: "Short URL is required",
+      },
+    },
+  },
+  delete_short_url: {
+    success: {
+      resultCode: 1419,
+      message: "Short URL deleted successfully",
+    },
+    error: {
+      resultCode: 1419,
+      message: "Unable to delete short URL",
+    },
+    request_body: {
+      resultCode: -1419,
+      errors: {
+        id: "ID is required",
+      },
+    },
+  },
 };
